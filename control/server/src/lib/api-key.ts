@@ -1,7 +1,7 @@
 import { randomBytes } from 'node:crypto'
 import argon2 from 'argon2'
 
-const PREFIX = 'dw_'
+const PREFIX = 'tiaki_'
 
 /** Generate a new random API key (plain text — shown to user once) */
 export function generateApiKey(): string {
@@ -10,7 +10,7 @@ export function generateApiKey(): string {
 
 /**
  * Extract the key prefix used for fast DB lookup.
- * Takes the first 16 hex chars after the 'dw_' prefix (8 bytes of entropy).
+ * Takes the first 16 hex chars after the 'tiaki_' prefix (8 bytes of entropy).
  * The prefix is not a secret — it's stored unhashed alongside the argon2 hash.
  */
 export function extractKeyPrefix(key: string): string {
