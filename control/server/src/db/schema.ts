@@ -40,7 +40,7 @@ export const agents = pgTable('agents', {
   name: text('name').notNull(),
   type: agentTypeEnum('type').notNull(),
   apiKeyHash: text('api_key_hash').notNull(),
-  /** First 16 hex chars of the raw key (after 'dw_' prefix) — for O(1) lookup, not a secret */
+  /** First 16 hex chars of the raw key (after 'tiaki_' prefix) — for O(1) lookup, not a secret */
   keyPrefix: text('key_prefix'),
   status: agentStatusEnum('status').notNull().default('unknown'),
   lastSeenAt: timestamp('last_seen_at', { withTimezone: true }),
