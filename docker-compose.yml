@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: postgres:17-alpine
+    image: postgres:18-alpine
     restart: unless-stopped
     environment:
       POSTGRES_USER: tiaki
@@ -12,7 +12,7 @@ services:
       - tiaki-internal
 
   server:
-    image: tiakidev/tiaki-server:latest
+    image: tiakidev/tiaki-server:0.4.0
     restart: unless-stopped
     depends_on:
       - postgres
@@ -62,7 +62,7 @@ services:
       - tiaki-internal
 
   agent:
-    image: tiakidev/tiaki-agent-docker:latest
+    image: tiakidev/tiaki-agent-docker:0.4.0
     restart: unless-stopped
     profiles:
       - agent
