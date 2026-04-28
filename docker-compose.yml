@@ -17,7 +17,7 @@ services:
     depends_on:
       - postgres
     ports:
-      - "3001:3001"
+      - 9001:3001"
     networks:
       - tiaki-internal
     environment:
