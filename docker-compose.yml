@@ -7,7 +7,7 @@ services:
       POSTGRES_PASSWORD: tiaki
       POSTGRES_DB: tiaki
     volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - postgres-data:/var/lib/postgresql
     networks:
       - tiaki-internal
 
